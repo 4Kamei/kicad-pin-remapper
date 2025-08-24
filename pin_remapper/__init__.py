@@ -3,12 +3,12 @@ import wx
 from pcbnew import ActionPlugin
 import math
 
-class NetGeometryExtractor(ActionPlugin):
+class PinRemapper(ActionPlugin):
 
     def defaults(self):
-        self.name = "Net Geometry Extractor"
+        self.name = "Pin Remapper"
         self.category = "Net Utilities"
-        self.description = "Extracts geometry grouped by net (tracks, pads, zones)"
+        self.description = "Remaps pins in the same group, based on closes approach to other pins in the same group"
         self.show_toolbar_button = True
 
         self.icon_file_name = ""  # Add icon path if needed
@@ -580,4 +580,4 @@ def get_selected_pins():
 
 
 # Required to register the plugin
-NetGeometryExtractor().register()
+PinRemapper().register()
